@@ -1,0 +1,234 @@
+@import '~antd/dist/antd.css';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+.app {
+
+  width: 100vw;
+  height: 100vh;
+
+  &__wrapper {
+    margin: 0 auto;
+    width: 70%;
+    height: 100%;
+  }
+
+  &__chat {
+    height: 90vh;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    box-shadow: 0 10px 50px rgb(114, 114, 114 / 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &-auth {
+      flex: 1;
+      max-width: 50%;
+
+      input {
+        border-radius: 15px;
+      }
+
+      button {
+        width: 100%;
+        border-radius: 15px;
+      }
+    }
+
+    .chat {
+      width: 100%;
+      height: 100%;
+      display: flex;
+
+
+      &__users {
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid rgb(218, 218, 218);
+        align-items: center;
+        height: 100%;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          width: 3px;
+
+
+          &-thumb {
+            background-color: #1890ff;
+            border-radius: 5px;
+          }
+        }
+
+
+        h2 {
+          font-size: 25px;
+          font-weight: 500;
+          margin-bottom: 0px;
+          padding: 20px 0;
+          position: relative;
+          width: 100%;
+          text-align: center;
+          border-bottom: 1px solid rgb(218, 218, 218);
+
+        }
+
+        .online {
+          padding: 5px 20px;
+          background-color: #1890ff;
+          border-radius: 15px;
+          color: #fff;
+          margin: 15px;
+        }
+
+        .users {
+          flex: 1;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+
+          li {
+            font-weight: 500;
+            text-align: center;
+            padding: 5px 0;
+            width: 80%;
+            margin: 0 auto;
+            background: #daeeff;
+            margin-bottom: 5px;
+            border-radius: 15px;
+            order: 2;
+
+            &.me {
+              order: 1;
+              background-color: #1890ff;
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      &__messages {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        overflow-y: auto;
+        padding-top: 30px;
+
+        .messages {
+          flex: 1;
+          padding: 0 20px;
+          height: 100%;
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          &::-webkit-scrollbar {
+            width: 3px;
+
+
+            &-thumb {
+              background-color: #1890ff;
+              border-radius: 5px;
+            }
+          }
+
+          .message {
+            max-width: 50%;
+            // min-width: 50px;
+            background: #daeeff;
+            border-radius: 30px 30px 30px 0px;
+            padding: 5px 15px;
+            font-weight: 500;
+            font-size: 14px;
+            color: rgb(54,
+                54,
+                54);
+            position: relative;
+            margin-bottom: 25px;
+            box-shadow: 2px 3px 5px -2px #a7a7a7;
+
+            p {
+              margin-bottom: 0;
+              word-wrap: break-word;
+
+            }
+
+            span {
+              background: #1890ff;
+              padding: 2px 5px;
+              border-radius: 10px;
+              color: #fff;
+              position: absolute;
+              right: -6px;
+              bottom: -10px;
+              font-size: 10px;
+            }
+
+            &.incoming {
+              border-radius: 30px 30px 0px 30px;
+              background: #1890ff;
+              color: #fff;
+              align-self: flex-end;
+              margin-bottom: 5px;
+
+              span {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .inputs {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          justify-content: center;
+          padding: 10px 0;
+          background-color: rgb(245, 245, 245);
+          border-top: 1px solid rgb(236, 236, 236);
+
+          input {
+            width: 80%;
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 15px;
+            border-top-left-radius: 15px;
+          }
+
+          button {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            border-bottom-right-radius: 15px;
+            border-top-right-radius: 15px;
+          }
+
+          .anticon-send {
+            color: #fff;
+          }
+        }
+
+      }
+    }
+  }
+}
